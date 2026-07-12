@@ -1,0 +1,42 @@
+{
+  "folders": [
+    {
+      "name": "repo",
+      "path": "."
+    },
+    {
+      "name": "app: docs",
+      "path": "apps/docs"
+    },
+    {
+      "name": "app: web",
+      "path": "apps/web"
+    },
+    {
+      "name": "pkg: ui",
+      "path": "packages/ui"
+    },
+    {
+      "name": "pkg: eslint-config",
+      "path": "packages/eslint-config"
+    },
+    {
+      "name": "pkg: typescript-config",
+      "path": "packages/typescript-config"
+    }
+  ],
+  "settings": {
+    "typescript.tsdk": "node_modules/typescript/lib",
+    "editor.formatOnSave": true,
+    "files.exclude": {
+      "**/.turbo": true,
+      "**/node_modules": true
+    }
+  },
+  "extensions": {
+    "recommendations": [
+      "dbaeumer.vscode-eslint",
+      "esbenp.prettier-vscode"
+    ]
+  }
+}
