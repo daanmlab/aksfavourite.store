@@ -5,10 +5,6 @@
       "path": "."
     },
     {
-      "name": "app: docs",
-      "path": "apps/docs"
-    },
-    {
       "name": "app: web",
       "path": "apps/web"
     },
