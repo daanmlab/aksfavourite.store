@@ -1,0 +1,21 @@
+services:
+  db:
+    image: postgres:17-alpine
+    container_name: aksfavourite-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: aksfavourite
+      POSTGRES_PASSWORD: aksfavourite
+      POSTGRES_DB: aksfavourite
+    ports:
+      - "5432:5432"
+    volumes:
+      - aksfavourite-db-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U aksfavourite -d aksfavourite"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  aksfavourite-db-data:
