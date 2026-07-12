@@ -1,0 +1,33 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Product {
+  id             String           @id
+  title          String
+  description    String           @default("")
+  category       String           @default("")
+  imageUrl       String           @map("image_url")
+  imageAlt       String           @default("") @map("image_alt")
+  currencySymbol String           @default("€") @map("currency_symbol")
+  isFeatured     Boolean          @default(false) @map("is_featured")
+  createdAt      DateTime         @default(now()) @map("created_at") @db.Timestamptz(6)
+  variants       ProductVariant[]
+
+  @@map("products")
+}
+
+model ProductVariant {
+  id         BigInt  @id @default(autoincrement())
+  productId  String  @map("product_id")
+  label      String
+  priceCents Int     @map("price_cents")
+  sortOrder  Int     @default(0) @map("sort_order")
+  product    Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+
+  @@map("product_variants")
+}
