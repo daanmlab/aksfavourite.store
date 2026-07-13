@@ -5,7 +5,11 @@
   "private": true,
   "exports": {
     "./button": "./src/components/button.tsx",
-    "./utils": "./src/lib/utils.ts"
+    "./utils": "./src/lib/utils.ts",
+    "./lib/*": "./src/lib/*.ts",
+    "./components/commercn/product-cards/*": "./src/components/commercn/product-cards/*.tsx",
+    "./components/*": "./src/components/*.tsx",
+    "./*": "./src/components/*.tsx"
   },
   "scripts": {
     "lint": "eslint --max-warnings 0",
@@ -14,6 +18,7 @@
   "dependencies": {
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "lucide-react": "^1.24.0",
     "tailwind-merge": "^3.4.0"
   },
   "devDependencies": {
